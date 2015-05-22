@@ -1,6 +1,7 @@
 
 package maincalc;
 import java.io.IOException;
+import org.apache.log4j.Logger;
 
 public class Calc {
     private static final String plus = "+";
@@ -9,6 +10,7 @@ public class Calc {
     private static final String pow = "^";
     private static final String div = "/";
     private static final String sqrt = "sqrt";
+    final static Logger logger = Logger.getLogger(HelloExample.class);
     
     public void Calculation(int a, int b, String op) throws IOException 
     {
@@ -74,6 +76,18 @@ public class Calc {
     {
         return Math.sqrt(a);
     }
+    
+    if(logger.isDebugEnabled()){
+			logger.debug("This is debug : " + parameter);
+		}
+		
+		if(logger.isInfoEnabled()){
+			logger.info("This is info : " + parameter);
+		}
+		
+		logger.warn("This is warn : " + parameter);
+		logger.error("This is error : " + parameter);
+		logger.fatal("This is fatal : " + parameter);
     
 }
 
